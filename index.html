@@ -5,24 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Husain Z. Attarwala, PhD - Curriculum Vitae</title>
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts - Academic theme fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* Glint-inspired CSS */
+        /* Hugo Academic inspired CSS */
         :root {
-            --color-primary: #cf1767;
-            --color-secondary: #0087cc;
-            --color-black: #000000;
-            --color-gray: #888888;
-            --color-gray-light: #f7f7f7;
-            --color-gray-medium: #dedede;
-            --color-white: #ffffff;
-            --font-primary: 'Lora', serif;
-            --font-secondary: 'Roboto', sans-serif;
+            --primary-color: #2962ff;
+            --primary-color-dark: #1976d2;
+            --secondary-color: #00bcd4;
+            --accent-color: #ff6f00;
+            --text-color: #212529;
+            --text-muted: #6c757d;
+            --text-light: #adb5bd;
+            --background-color: #ffffff;
+            --background-light: #f8f9fa;
+            --background-dark: #343a40;
+            --border-color: #dee2e6;
+            --shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+            --shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+            --font-family-sans-serif: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-family-serif: 'Playfair Display', Georgia, serif;
         }
 
         * {
@@ -32,183 +38,262 @@
         }
 
         html {
-            font-size: 10px;
+            font-size: 16px;
             scroll-behavior: smooth;
         }
 
         body {
-            font-family: var(--font-secondary);
-            font-size: 1.6rem;
-            line-height: 1.8;
-            color: var(--color-gray);
-            background-color: var(--color-white);
+            font-family: var(--font-family-sans-serif);
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            font-weight: 400;
         }
 
         /* Typography */
         h1, h2, h3, h4, h5, h6 {
-            font-family: var(--font-primary);
-            color: var(--color-black);
+            font-family: var(--font-family-serif);
             font-weight: 600;
-            line-height: 1.3;
-            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--text-color);
         }
 
         h1 {
-            font-size: 5.2rem;
-            letter-spacing: -0.05rem;
-            margin-bottom: 2rem;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
         }
 
         h2 {
-            font-size: 4.2rem;
-            margin-top: 6rem;
-            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
             position: relative;
-            display: inline-block;
+            padding-bottom: 0.5rem;
         }
 
         h2::after {
             content: '';
-            display: block;
-            width: 60px;
-            height: 2px;
-            background-color: var(--color-primary);
-            margin-top: 1.5rem;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 3rem;
+            height: 0.25rem;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 0.125rem;
         }
 
         h3 {
-            font-size: 2.8rem;
-            margin-bottom: 2rem;
-            color: var(--color-black);
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
         }
 
         h4 {
-            font-size: 2.1rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-color);
+        }
+
+        p {
+            margin-bottom: 1rem;
         }
 
         a {
-            color: var(--color-primary);
+            color: var(--primary-color);
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: color 0.3s ease;
         }
 
         a:hover {
-            color: var(--color-black);
+            color: var(--primary-color-dark);
         }
 
         /* Layout */
         .container {
-            max-width: 1200px;
+            max-width: 1140px;
             margin: 0 auto;
-            padding: 0 40px;
+            padding: 0 1.5rem;
         }
 
         .row {
             display: flex;
             flex-wrap: wrap;
-            margin: 0 -20px;
+            margin: 0 -0.75rem;
         }
 
-        .col-full {
+        .col-12 {
             width: 100%;
-            padding: 0 20px;
+            padding: 0 0.75rem;
         }
 
-        /* Header */
-        header {
-            padding: 8rem 0 6rem;
-            background-color: var(--color-gray-light);
+        .col-md-8 {
+            width: 66.666667%;
+            padding: 0 0.75rem;
+        }
+
+        .col-md-4 {
+            width: 33.333333%;
+            padding: 0 0.75rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--background-light) 0%, var(--background-color) 100%);
+            padding: 5rem 0;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
-        .header-content {
-            max-width: 900px;
-            margin: 0 auto;
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23f1f3f4" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.5;
         }
 
-        .header-position {
-            font-family: var(--font-secondary);
-            font-size: 1.8rem;
-            font-weight: 300;
-            color: var(--color-primary);
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 700;
             margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.3rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .header-intro {
-            font-size: 2.4rem;
-            line-height: 1.8;
-            color: var(--color-gray);
-            margin-bottom: 3rem;
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-weight: 300;
         }
 
-        .header-nav {
+        .hero-description {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            line-height: 1.7;
+        }
+
+        .contact-links {
             display: flex;
             justify-content: center;
-            gap: 3rem;
+            gap: 2rem;
             flex-wrap: wrap;
         }
 
-        .header-nav a {
-            font-size: 1.5rem;
-            color: var(--color-gray);
-            transition: all 0.3s ease;
+        .contact-link {
             display: flex;
             align-items: center;
-            gap: 0.8rem;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--background-color);
+            border: 2px solid var(--border-color);
+            border-radius: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
         }
 
-        .header-nav a:hover {
-            color: var(--color-primary);
+        .contact-link:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
+        }
+
+        .contact-link i {
+            color: var(--primary-color);
         }
 
         /* Sections */
-        section {
-            padding: 6rem 0;
+        .section {
+            padding: 4rem 0;
         }
 
-        section:nth-child(even) {
-            background-color: var(--color-gray-light);
+        .section:nth-child(even) {
+            background-color: var(--background-light);
         }
 
-        /* Summary Section */
-        .lead {
-            font-size: 2rem;
-            line-height: 1.8;
-            color: var(--color-gray);
-            font-weight: 300;
+        /* Cards */
+        .card {
+            background: var(--background-color);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
         }
 
-        /* Competencies */
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Competencies Grid */
         .competencies-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
-        .competency-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1.5rem;
+        .competency-card {
+            background: var(--background-color);
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .competency-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
         }
 
         .competency-icon {
-            color: var(--color-primary);
-            font-size: 2rem;
-            margin-top: 0.3rem;
+            width: 4rem;
+            height: 4rem;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
         }
 
-        .competency-text {
-            flex: 1;
+        .competency-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .competency-description {
+            color: var(--text-muted);
+            line-height: 1.6;
         }
 
         /* Timeline */
         .timeline {
             position: relative;
-            padding-left: 4rem;
+            padding-left: 2rem;
         }
 
         .timeline::before {
@@ -217,168 +302,178 @@
             left: 0;
             top: 0;
             bottom: 0;
-            width: 1px;
-            background-color: var(--color-gray-medium);
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
         }
 
-        .timeline-block {
+        .timeline-item {
             position: relative;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
+            background: var(--background-color);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            margin-left: 2rem;
         }
 
-        .timeline-bullet {
+        .timeline-item::before {
+            content: '';
             position: absolute;
-            left: -4.5rem;
-            top: 0.5rem;
-            width: 1.5rem;
-            height: 1.5rem;
+            left: -3rem;
+            top: 2rem;
+            width: 1rem;
+            height: 1rem;
+            background: var(--primary-color);
             border-radius: 50%;
-            background-color: var(--color-primary);
+            border: 3px solid var(--background-color);
+            box-shadow: 0 0 0 3px var(--primary-color);
         }
 
         .timeline-header {
             margin-bottom: 1.5rem;
         }
 
-        .timeline-header h3 {
+        .timeline-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .timeline-company {
+            font-size: 1.125rem;
+            color: var(--primary-color);
+            font-weight: 500;
             margin-bottom: 0.5rem;
         }
 
-        .timeline-header h4 {
-            font-family: var(--font-secondary);
-            font-size: 1.8rem;
-            font-weight: 400;
-            color: var(--color-primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-header p {
-            font-size: 1.4rem;
-            color: var(--color-gray);
+        .timeline-period {
+            font-size: 0.875rem;
+            color: var(--text-muted);
             font-style: italic;
         }
 
         .timeline-content ul {
             list-style: none;
-            padding-left: 0;
+            padding: 0;
         }
 
-        .timeline-content ul li {
+        .timeline-content li {
             position: relative;
-            padding-left: 2rem;
-            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-muted);
         }
 
-        .timeline-content ul li::before {
-            content: '▸';
+        .timeline-content li::before {
+            content: '→';
             position: absolute;
             left: 0;
-            color: var(--color-primary);
+            color: var(--primary-color);
+            font-weight: bold;
         }
 
         /* Publications */
         .publication-item {
-            margin-bottom: 2rem;
-            padding-left: 2rem;
-            position: relative;
-        }
-
-        .publication-item::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--color-primary);
-            font-size: 2rem;
-            line-height: 1.6;
-        }
-
-        /* Google Scholar Box */
-        .scholar-box {
-            background-color: var(--color-gray-light);
-            border: 2px solid var(--color-primary);
-            border-radius: 8px;
-            padding: 3rem;
-            text-align: center;
-            margin: 4rem 0;
-        }
-
-        .scholar-box h4 {
-            color: var(--color-primary);
+            background: var(--background-color);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
             margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary-color);
+            box-shadow: var(--shadow);
         }
 
-        .scholar-box p {
-            margin-bottom: 2rem;
+        .publication-item:hover {
+            transform: translateX(4px);
+            box-shadow: var(--shadow-lg);
         }
 
-        .publications-scroll-box {
+        .publication-impact {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-color), #ff8f00);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+
+        /* Scholar Section */
+        .scholar-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 3rem;
+            border-radius: 1rem;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .scholar-section h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .publications-scroll {
             max-height: 400px;
             overflow-y: auto;
-            text-align: left;
-            padding: 2rem;
-            background-color: var(--color-white);
-            border: 1px solid var(--color-gray-medium);
-            border-radius: 4px;
-            margin-bottom: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            backdrop-filter: blur(10px);
         }
 
-        .publications-scroll-box::-webkit-scrollbar {
+        .publications-scroll::-webkit-scrollbar {
             width: 8px;
         }
 
-        .publications-scroll-box::-webkit-scrollbar-track {
-            background: var(--color-gray-light);
+        .publications-scroll::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 4px;
         }
 
-        .publications-scroll-box::-webkit-scrollbar-thumb {
-            background: var(--color-primary);
+        .publications-scroll::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.3);
             border-radius: 4px;
-        }
-
-        .publications-scroll-box::-webkit-scrollbar-thumb:hover {
-            background: var(--color-black);
         }
 
         .publication-scroll-item {
             padding: 1rem 0;
-            border-bottom: 1px solid var(--color-gray-light);
-            font-size: 1.4rem;
-            line-height: 1.6;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: left;
         }
 
         .publication-scroll-item:last-child {
             border-bottom: none;
         }
 
-        .publication-scroll-item strong {
-            color: var(--color-primary);
-            margin-right: 0.5rem;
-        }
-
-        .publication-scroll-item em {
-            color: var(--color-gray);
+        .publication-year {
+            color: var(--accent-color);
+            font-weight: 600;
         }
 
         .scholar-button {
             display: inline-block;
-            background-color: var(--color-primary);
-            color: var(--color-white);
-            padding: 1.2rem 3rem;
-            border-radius: 4px;
-            font-size: 1.6rem;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 2rem;
             font-weight: 500;
             transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
         }
 
         .scholar-button:hover {
-            background-color: var(--color-black);
-            color: var(--color-white);
+            background: rgba(255, 255, 255, 0.3);
             transform: translateY(-2px);
+            color: white;
         }
 
-        /* Skills tags */
-        .skills-list {
+        /* Skills */
+        .skills-container {
             display: flex;
             flex-wrap: wrap;
             gap: 1rem;
@@ -386,96 +481,87 @@
         }
 
         .skill-tag {
-            background-color: var(--color-gray-light);
-            padding: 0.5rem 1.5rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 0.5rem 1rem;
             border-radius: 2rem;
-            font-size: 1.4rem;
-            color: var(--color-gray);
-            border: 1px solid var(--color-gray-medium);
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
         }
 
-        /* Footer */
-        footer {
-            background-color: var(--color-black);
-            color: var(--color-white);
-            padding: 4rem 0;
-            text-align: center;
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
         }
 
-        footer p {
-            font-size: 1.4rem;
-            opacity: 0.7;
-        }
-
-        /* Password Protection Modal */
+        /* Password Modal */
         .password-modal {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.8);
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 1000;
+            backdrop-filter: blur(10px);
         }
 
         .password-content {
-            background-color: var(--color-white);
-            padding: 4rem;
-            border-radius: 8px;
+            background: var(--background-color);
+            padding: 3rem;
+            border-radius: 1rem;
             text-align: center;
             max-width: 400px;
             width: 90%;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
         }
 
         .password-content h2 {
-            color: var(--color-primary);
-            margin-bottom: 2rem;
-            font-size: 3rem;
-        }
-
-        .password-content p {
-            margin-bottom: 2rem;
-            color: var(--color-gray);
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
         }
 
         .password-content input {
             width: 100%;
-            padding: 1.2rem;
-            font-size: 1.6rem;
-            border: 2px solid var(--color-gray-medium);
-            border-radius: 4px;
-            margin-bottom: 2rem;
-            font-family: var(--font-secondary);
+            padding: 1rem;
+            font-size: 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-family: var(--font-family-sans-serif);
+            transition: border-color 0.3s ease;
         }
 
         .password-content input:focus {
             outline: none;
-            border-color: var(--color-primary);
+            border-color: var(--primary-color);
         }
 
         .password-content button {
-            background-color: var(--color-primary);
-            color: var(--color-white);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
             border: none;
-            padding: 1.2rem 3rem;
-            font-size: 1.6rem;
-            border-radius: 4px;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            border-radius: 2rem;
             cursor: pointer;
             transition: all 0.3s ease;
             font-weight: 500;
         }
 
         .password-content button:hover {
-            background-color: var(--color-black);
             transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
         }
 
         .error-message {
-            color: red;
-            font-size: 1.4rem;
+            color: #dc3545;
+            font-size: 0.875rem;
             margin-top: 1rem;
             display: none;
         }
@@ -490,42 +576,85 @@
             20%, 40%, 60%, 80% { transform: translateX(10px); }
         }
 
-        /* Responsive */
-        @media only screen and (max-width: 768px) {
-            h1 {
-                font-size: 4rem;
+        /* Footer */
+        .footer {
+            background: var(--background-dark);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer p {
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
             }
-            
-            h2 {
-                font-size: 3.2rem;
+
+            .hero-subtitle {
+                font-size: 1.25rem;
             }
-            
-            .container {
-                padding: 0 20px;
+
+            .contact-links {
+                gap: 1rem;
             }
-            
+
+            .contact-link {
+                padding: 0.5rem 1rem;
+            }
+
+            .col-md-8, .col-md-4 {
+                width: 100%;
+            }
+
+            .competencies-grid {
+                grid-template-columns: 1fr;
+            }
+
             .timeline {
-                padding-left: 2rem;
+                padding-left: 1rem;
             }
-            
-            .timeline-bullet {
-                left: -2.5rem;
+
+            .timeline-item {
+                margin-left: 1rem;
+            }
+
+            .timeline-item::before {
+                left: -1.5rem;
+            }
+
+            .container {
+                padding: 0 1rem;
             }
         }
 
-        /* Print styles */
+        /* Print Styles */
         @media print {
-            section {
+            .password-modal {
+                display: none !important;
+            }
+            
+            #mainContent {
+                display: block !important;
+            }
+            
+            .section {
                 page-break-inside: avoid;
+                background: white !important;
             }
             
-            header {
-                background-color: white;
-                padding: 2rem 0;
+            .hero {
+                background: white !important;
             }
             
-            section:nth-child(even) {
-                background-color: white;
+            .scholar-section {
+                background: white !important;
+                color: black !important;
+                border: 2px solid var(--primary-color);
             }
         }
     </style>
@@ -534,390 +663,365 @@
     <!-- Password Protection Modal -->
     <div id="passwordModal" class="password-modal">
         <div class="password-content">
-            <h2>Access Protected</h2>
+            <h2><i class="fas fa-lock"></i> Access Protected</h2>
             <p>Please enter the password to view this CV</p>
             <input type="password" id="passwordInput" placeholder="Enter password" autocomplete="off">
-            <button id="submitPassword">Submit</button>
+            <button id="submitPassword">
+                <i class="fas fa-key"></i> Submit
+            </button>
             <p class="error-message" id="errorMessage"></p>
         </div>
     </div>
 
-    <!-- Main Content (initially hidden) -->
+    <!-- Main Content -->
     <div id="mainContent" style="display: none;">
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <p class="header-position">Clinical Pharmacologist & Biotech R&D Leader</p>
-                <h1>Husain Z. Attarwala, PhD</h1>
-                <p class="header-intro">Building and leading high-performing teams in model-informed drug development across diverse therapeutic areas</p>
-                <div class="header-nav">
-                    <a href="tel:6178400805"><i class="fas fa-phone"></i> (617) 840-0805</a>
-                    <a href="mailto:husain.attarwala@gmail.com"><i class="fas fa-envelope"></i> husain.attarwala@gmail.com</a>
-                    <a href="https://www.linkedin.com/in/husainattarwala/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                    <a href="https://scholar.google.com/citations?user=DvGvTvMAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Summary Section -->
-    <section id="summary">
-        <div class="container">
-            <div class="row">
-                <div class="col-full">
-                    <h2>About</h2>
-                    <p class="lead">
-                        Experienced clinical pharmacologist and R&D leader with over 15 years building and leading highly functional teams in model-informed drug development (MIDD). Proven track record in establishing clinical pharmacology and pharmacometrics capabilities in small biotechs, driving clinical strategy, and advancing innovative therapies across multiple therapeutic areas. Expert in leveraging quantitative approaches to enable critical development decisions while fostering a culture of scientific excellence and collaboration.
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-subtitle">Clinical Pharmacologist & Biotech R&D Leader</div>
+                    <h1 class="hero-title">Husain Z. Attarwala, PhD</h1>
+                    <p class="hero-description">
+                        Building and leading high-performing teams in model-informed drug development across diverse therapeutic areas
                     </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Competencies Section -->
-    <section id="competencies">
-        <div class="container">
-            <div class="row">
-                <div class="col-full">
-                    <h2>Core Competencies</h2>
-                    <div class="competencies-grid">
-                        <div class="competency-item">
-                            <i class="fas fa-chart-line competency-icon"></i>
-                            <div class="competency-text">
-                                <h4>Model-Informed Drug Development (MIDD)</h4>
-                                <p>Expert in implementing MIDD strategies for dose optimization and go/no-go decisions</p>
-                            </div>
-                        </div>
-                        <div class="competency-item">
-                            <i class="fas fa-microscope competency-icon"></i>
-                            <div class="competency-text">
-                                <h4>Clinical Pharmacology Leadership</h4>
-                                <p>Building and leading clinical pharmacology functions from inception in biotechs</p>
-                            </div>
-                        </div>
-                        <div class="competency-item">
-                            <i class="fas fa-pills competency-icon"></i>
-                            <div class="competency-text">
-                                <h4>Broad Therapeutic Expertise</h4>
-                                <p>Immunology, immuno-oncology, rare diseases, infectious diseases, cardiovascular, pulmonary, CNS diseases</p>
-                            </div>
-                        </div>
-                        <div class="competency-item">
-                            <i class="fas fa-building competency-icon"></i>
-                            <div class="competency-text">
-                                <h4>Biotech R&D Company Building</h4>
-                                <p>Leadership in forming and scaling efficient R&D teams in small biotechs</p>
-                            </div>
-                        </div>
-                        <div class="competency-item">
-                            <i class="fas fa-users competency-icon"></i>
-                            <div class="competency-text">
-                                <h4>Team Building & Leadership</h4>
-                                <p>Creating high-performing, collaborative teams aligned with strategic goals</p>
-                            </div>
-                        </div>
-                        <div class="competency-item">
-                            <i class="fas fa-code competency-icon"></i>
-                            <div class="competency-text">
-                                <h4>Advanced Modeling Capabilities</h4>
-                                <p>PK/PD, PBPK, QSP, disease progression models using R, NONMEM, Python, Julia</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience">
-        <div class="container">
-            <div class="row">
-                <div class="col-full">
-                    <h2>Experience</h2>
-                    <div class="timeline">
-                        <div class="timeline-block">
-                            <div class="timeline-bullet"></div>
-                            <div class="timeline-header">
-                                <h3>Vice President, DMPK, Clinical Pharmacology, Pharmacometrics and Analytical Sciences</h3>
-                                <h4>Aera Therapeutics</h4>
-                                <p>September 2022 - Present | Cambridge, MA</p>
-                            </div>
-                            <div class="timeline-content">
-                                <ul>
-                                    <li>Built and expanded scientific and operational capabilities across Clinical Pharmacology, Pharmacometrics and DMPK from ground up</li>
-                                    <li>Implemented comprehensive MIDD strategies for target selection and dose optimization across multiple therapeutic areas</li>
-                                    <li>Led cross-functional teams to enable critical go/no-go decisions using quantitative approaches</li>
-                                    <li>Utilized advanced modeling and simulation techniques to inform indication selection and predict efficacy/safety profiles</li>
-                                    <li>Shaped company's scientific vision and culture by fostering innovation and mentoring teams</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="timeline-block">
-                            <div class="timeline-bullet"></div>
-                            <div class="timeline-header">
-                                <h3>Head, Clinical Pharmacology and Pharmacometrics</h3>
-                                <h4>Moderna Therapeutics</h4>
-                                <p>February 2019 - September 2022 | Cambridge, MA</p>
-                            </div>
-                            <div class="timeline-content">
-                                <ul>
-                                    <li>Established and scaled the Clinical Pharmacology and Pharmacometrics function during critical growth phase</li>
-                                    <li>Led MIDD efforts across diverse therapeutic areas including oncology, immunology, rare and infectious diseases</li>
-                                    <li>Developed first-of-its-kind Immunostimulatory/immunodynamic (IS/ID) models for mRNA vaccines</li>
-                                    <li>Applied IS/ID models for COVID-19 mRNA vaccine, enabling dose selection across all age groups</li>
-                                    <li>Served as clinical pharmacology expert in regulatory interactions with FDA, EMA, and other global agencies</li>
-                                    <li>Established deep integration of pharmacometrics approaches across company governance model</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="timeline-block">
-                            <div class="timeline-bullet"></div>
-                            <div class="timeline-header">
-                                <h3>Principal Scientist</h3>
-                                <h4>Alnylam Pharmaceuticals</h4>
-                                <p>March 2011 - January 2019 | Cambridge, MA</p>
-                            </div>
-                            <div class="timeline-content">
-                                <ul>
-                                    <li>Progressed from Research Associate to Principal Scientist, demonstrating consistent technical leadership</li>
-                                    <li>Developed comprehensive PK/PD and disease models supporting multiple first-in-human programs</li>
-                                    <li>Contributed to regulatory approval and commercialization of 5 siRNA drugs (Onpattro, Vitrusiran, Inclisiran, Lumasiran, Givosiran)</li>
-                                    <li>Led bioanalytical and DMPK platform development for novel siRNA therapeutics</li>
-                                    <li>Authored key sections of multiple NDA/BLA submissions and regulatory briefing documents</li>
-                                    <li>Mentored teams and conducted workshops to build organizational capabilities</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education">
-        <div class="container">
-            <div class="row">
-                <div class="col-full">
-                    <h2>Education</h2>
-                    <div class="timeline">
-                        <div class="timeline-block">
-                            <div class="timeline-bullet"></div>
-                            <div class="timeline-header">
-                                <h3>Ph.D. in Pharmaceutical Sciences</h3>
-                                <h4>Northeastern University</h4>
-                                <p>Bouve School of Pharmacy, Boston, MA</p>
-                            </div>
-                        </div>
-                        <div class="timeline-block">
-                            <div class="timeline-bullet"></div>
-                            <div class="timeline-header">
-                                <h3>Master of Science in Pharmaceutical Sciences</h3>
-                                <h4>Northeastern University</h4>
-                                <p>Bouve School of Pharmacy, Boston, MA</p>
-                            </div>
-                        </div>
-                        <div class="timeline-block">
-                            <div class="timeline-bullet"></div>
-                            <div class="timeline-header">
-                                <h3>Bachelor's in Pharmacy</h3>
-                                <h4>Al-Ameen College of Pharmacy</h4>
-                                <p>Rajiv Gandhi University of Health Sciences, Bangalore, India</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Publications Section -->
-    <section id="publications">
-        <div class="container">
-            <div class="row">
-                <div class="col-full">
-                    <h2>Selected Publications</h2>
-                    <h3>Top Journal Articles</h3>
-                    
-                    <div class="publication-item">
-                        August, A., et al. (2021). <a href="https://www.nature.com/articles/s41591-021-01573-6" target="_blank">"A phase 1 trial of lipid-encapsulated mRNA encoding a monoclonal antibody with neutralizing activity against Chikungunya virus."</a> <em>Nature Medicine</em>, 27(12): 2224-2233. <strong>[IF: 82.9]</strong>
-                    </div>
-                    
-                    <div class="publication-item">
-                        Kaushal, N., Attarwala, H., et al. (2024). <a href="https://ascpt.onlinelibrary.wiley.com/doi/10.1111/cts.13894" target="_blank">"Translational pharmacokinetic/pharmacodynamic model for mRNA-0184, an investigational therapeutic for the treatment of heart failure."</a> <em>Clinical and Translational Science</em>, 17(8): e13894.
-                    </div>
-                    
-                    <div class="publication-item">
-                        Ivaturi V, Attarwala, H., et al. (2024). <a href="https://ascpt.onlinelibrary.wiley.com/doi/10.1002/psp4.13073" target="_blank">"Immunostimulatory/immunodynamic model of mRNA-1273 to guide pediatric vaccine dose selection."</a> <em>CPT: Pharmacometrics & Systems Pharmacology</em>, 13(1): 68-83.
-                    </div>
-                    
-                    <div class="publication-item">
-                        Narayanan, E., et al. (2022). <a href="https://www.mdpi.com/2073-4468/11/4/67" target="_blank">"Rational design and in vivo characterization of mRNA-encoded broadly neutralizing antibody combinations against HIV-1."</a> <em>Antibodies</em>, 11(4): 67.
-                    </div>
-                    
-                    <div class="publication-item">
-                        Gandham, S.K., Attarwala, H.Z., & Amiji, M.M. (2022). <a href="https://pubs.acs.org/doi/10.1021/acs.molpharmaceut.2c00510" target="_blank">"Mathematical modeling and experimental validation of extracellular vesicle-mediated tumor suppressor microRNA delivery and propagation in ovarian cancer cells."</a> <em>Molecular Pharmaceutics</em>, 19(11): 4067-4079.
-                    </div>
-                    
-                    <div class="publication-item">
-                        Attarwala, H., et al. (2022). <a href="https://www.liebertpub.com/doi/10.1089/nat.2021.0057" target="_blank">"Translational Pharmacokinetic/Pharmacodynamic Model for mRNA-3927, an Investigational Therapeutic for the Treatment of Propionic Acidemia."</a> <em>Nucleic Acid Therapeutics</em>, 32(4): 318-332.
-                    </div>
-                    
-                    <div class="publication-item">
-                        Habtemariam, B.A., et al. (2021). <a href="https://ascpt.onlinelibrary.wiley.com/doi/10.1002/cpt.2021" target="_blank">"Single-Dose Pharmacokinetics and Pharmacodynamics of Transthyretin Targeting N-acetylgalactosamine–Small Interfering Ribonucleic Acid Conjugate, Vutrisiran, in Healthy Subjects."</a> <em>Clinical Pharmacology & Therapeutics</em>, 109(2): 372-382.
-                    </div>
-                    
-                    <div class="publication-item">
-                        Zhang, X., et al. (2020). <a href="https://accp1.onlinelibrary.wiley.com/doi/10.1002/jcph.1480" target="_blank">"Patisiran pharmacokinetics, pharmacodynamics, and exposure-response analyses in the phase 3 APOLLO trial in patients with hereditary transthyretin-mediated (hATTR) amyloidosis."</a> <em>The Journal of Clinical Pharmacology</em>, 60(1): 37-49.
-                    </div>
-
-                    <div class="publication-item">
-                        Attarwala, H.Z., Suri, K., & Amiji, M.M. (2021). <a href="https://pubs.acs.org/doi/10.1021/acs.molpharmaceut.1c00355" target="_blank">"Co-silencing of tissue transglutaminase-2 and interleukin-15 genes in a celiac disease mimetic mouse model using a nanoparticle-in-microsphere oral system."</a> <em>Molecular Pharmaceutics</em>, 18(8): 3099-3107.
-                    </div>
-                    
-                    <div class="publication-item">
-                        Attarwala, H.Z., Suri, K., & Amiji, M.M. (2020). <a href="https://www.liebertpub.com/doi/10.1089/bioe.2020.0011" target="_blank">"Pharmacokinetics and biodistribution analysis of small interference RNA for silencing tissue transglutaminase-2 in celiac disease after oral administration in mice using gelatin-based multicompartmental delivery systems."</a> <em>Bioelectricity</em>, 2(2): 167-174.
-                    </div>
-
-                    <h3>Key Presentations</h3>
-                    <div class="publication-item">
-                        Husain Attarwala (2023). "Unlocking the potential of model-informed-drug-development for RNA therapeutics and vaccines." PEGS, Boston. <strong>[Invited Speaker]</strong>
-                    </div>
-                    
-                    <div class="publication-item">
-                        Husain Attarwala (2022). "Role of Scientific Computing in Dose Decisions for mRNA Therapeutics and Vaccines." <a href="https://juliacon.org/2022/" target="_blank">JuliaCon 2022</a>. <strong>[Keynote Speaker]</strong>
-                    </div>
-                    
-                    <div class="publication-item">
-                        Husain Attarwala (2018). "Pharmacokinetics and Pharmacodynamics of GalNAc-siRNA Conjugates." 37th GRASP Annual Conference. <strong>[Keynote Speaker]</strong>
-                    </div>
-
-                    <!-- Google Scholar Box -->
-                    <div class="scholar-box">
-                        <h4><i class="fas fa-graduation-cap"></i> Complete Publication List</h4>
-                        <p>All publications from Google Scholar (50+ papers, 1000+ citations)</p>
-                        <div class="publications-scroll-box">
-                            <div class="publication-scroll-item">
-                                <strong>2024</strong> - Kaushal N, Attarwala H, et al. "Translational pharmacokinetic/pharmacodynamic model for mRNA-0184..." <em>Clinical and Translational Science</em>
-                            </div>
-                            <div class="publication-scroll-item">
-                                <strong>2024</strong> - Liric Rajlic I, et al. "Translational kinetic-pharmacodynamics of mRNA-6231..." <em>CPT: Pharmacometrics & Systems Pharmacology</em>
-                            </div>
-                            <div class="publication-scroll-item">
-                                <strong>2024</strong> - Ivaturi V, Attarwala H, et al. "Immunostimulatory/immunodynamic model of mRNA-1273..." <em>CPT: Pharmacometrics & Systems Pharmacology</em>
-                            </div>
-                            <div class="publication-scroll-item">
-                                <strong>2023</strong> - Iqbal MJ, Hamdani T, Attarwala HZ, Amiji MM. "Nanoscale Vaccines for the Prevention of COVID-19" <em>Nanomedicines for the Prevention and Treatment of Infectious Diseases</em>
-                            </div>
-                            <div class="publication-scroll-item">
-                                <strong>2022</strong> - Gandham SK, Attarwala HZ, Amiji MM. "Mathematical Modeling and Experimental Validation..." <em>Molecular Pharmaceutics</em>
-                            </div>
-                            <div class="publication-scroll-item">
-                                <strong>2022</strong> - Narayanan E, et al. "Rational design and in vivo characterization of mRNA-encoded..." <em>Antibodies</em>
-                            </div>
-                            <div class="publication-scroll-item">
-                                <strong>2022</strong> - Attarwala H, et al. "Translational Pharmacokinetic/Pharmacodynamic Model for mRNA-3927..." <em>Nucleic Acid Therapeutics</em>
-                            </div>
-                            <div class="publication-scroll-item">
-                                <strong>2021</strong> - August A, et al. "A phase 1 trial of lipid-encapsulated mRNA encoding a monoclonal antibody..." <em>Nature Medicine</em>
-                            </div>
-                            <div class="publication-scroll-item">
-                                <strong>2021</strong> - Habtemariam BA, et al. "Single-Dose Pharmacokinetics and Pharmacodynamics of Transthyretin..." <em>Clinical Pharmacology & Therapeutics</em>
-                            </div>
-                            <div class="publication-scroll-item">
-                                <strong>2021</strong> - Attarwala HZ, Suri K, Amiji MM. "Co-Silencing of Tissue Transglutaminase-2 and Interleukin-15..." <em>Molecular Pharmaceutics</em>
-                            </div>
-                            <div class="publication-scroll-item">
-                                <strong>2020</strong> - Zhang X, et al. "Patisiran pharmacokinetics, pharmacodynamics, and exposure-response analyses..." <em>The Journal of Clinical Pharmacology</em>
-                            </div>
-                            <div class="publication-scroll-item">
-                                <strong>2020</strong> - Attarwala HZ, Suri K, Amiji MM. "Pharmacokinetics and Biodistribution Analysis..." <em>Bioelectricity</em>
-                            </div>
-                            <div class="publication-scroll-item">
-                                <strong>2018</strong> - Attarwala H, et al. "Oral nucleic acid therapy using multicompartmental delivery systems" <em>Wiley Interdisciplinary Reviews: Nanomedicine and Nanobiotechnology</em>
-                            </div>
-                            <div class="publication-scroll-item">
-                                <strong>2017</strong> - Nair JK, et al. "Impact of enhanced metabolic stability on pharmacokinetics..." <em>Nucleic Acids Research</em>
-                            </div>
-                            <div class="publication-scroll-item">
-                                <strong>2017</strong> - Attarwala H, et al. "Cosilencing intestinal transglutaminase-2 and interleukin-15..." <em>Molecular Pharmaceutics</em>
-                            </div>
-                            <div class="publication-scroll-item">
-                                <strong>2016</strong> - Attarwala H, Amiji M. "Biodegradable Polyester-Based Multi-Compartmental Delivery Systems..." <em>Handbook of Polyester Drug Delivery Systems</em>
-                            </div>
-                            <div class="publication-scroll-item">
-                                <strong>2015</strong> - Sehgal A, et al. "An RNAi therapeutic targeting antithrombin to rebalance..." <em>Nature Medicine</em>
-                            </div>
-                            <div class="publication-scroll-item">
-                                <strong>2015</strong> - Attarwala H, Amiji M. "Multicompartmental oral delivery systems for oligonucleotide..." <em>Advances and Challenges in the Delivery of Nucleic Acid Therapeutics</em>
-                            </div>
-                            <div class="publication-scroll-item">
-                                <strong>2013</strong> - Kriegel C, Attarwala H, Amiji M. "Multi-compartmental oral delivery systems..." <em>Advanced Drug Delivery Reviews</em>
-                            </div>
-                            <div class="publication-scroll-item">
-                                <strong>2012</strong> - Attarwala H, Amiji M. "Multi-compartmental nanoparticles-in-emulsion formulation..." <em>Pharmaceutical Research</em>
-                            </div>
-                            <div class="publication-scroll-item">
-                                <strong>2011</strong> - Kalariya M, Ganta S, Attarwala H, Amiji M. "Multifunctional Lipid Nanocarriers..." <em>Lipid Nanocarriers in Cancer Diagnosis and Therapy</em>
-                            </div>
-                            <div class="publication-scroll-item">
-                                <strong>2010</strong> - Jain S, Attarwala H, Amiji M. "Non-condensing polymeric gene delivery systems..." <em>Nano Life</em>
-                            </div>
-                        </div>
-                        <a href="https://scholar.google.com/citations?user=DvGvTvMAAAAJ&hl=en" target="_blank" class="scholar-button">
-                            <i class="fas fa-external-link-alt"></i> View Full Google Scholar Profile
+                    <div class="contact-links">
+                        <a href="tel:6178400805" class="contact-link">
+                            <i class="fas fa-phone"></i>
+                            (617) 840-0805
+                        </a>
+                        <a href="mailto:husain.attarwala@gmail.com" class="contact-link">
+                            <i class="fas fa-envelope"></i>
+                            husain.attarwala@gmail.com
+                        </a>
+                        <a href="https://www.linkedin.com/in/husainattarwala/" target="_blank" class="contact-link">
+                            <i class="fab fa-linkedin"></i>
+                            LinkedIn
+                        </a>
+                        <a href="https://scholar.google.com/citations?user=DvGvTvMAAAAJ&hl=en" target="_blank" class="contact-link">
+                            <i class="fas fa-graduation-cap"></i>
+                            Google Scholar
                         </a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="container">
-            <div class="row">
-                <div class="col-full">
-                    <h2>Technical Skills</h2>
-                    <div class="skills-list">
-                        <span class="skill-tag">Model-Informed Drug Development (MIDD)</span>
-                        <span class="skill-tag">Clinical Pharmacology</span>
-                        <span class="skill-tag">Pharmacometrics</span>
-                        <span class="skill-tag">PK/PD Modeling</span>
-                        <span class="skill-tag">PBPK</span>
-                        <span class="skill-tag">QSP</span>
-                        <span class="skill-tag">Population PK</span>
-                        <span class="skill-tag">R</span>
-                        <span class="skill-tag">NONMEM</span>
-                        <span class="skill-tag">Monolix</span>
-                        <span class="skill-tag">Phoenix WinNonlin</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">Julia</span>
-                        <span class="skill-tag">Clinical Trial Simulation</span>
-                        <span class="skill-tag">Regulatory Strategy</span>
-                        <span class="skill-tag">Team Building</span>
+        <!-- About Section -->
+        <section class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>About</h2>
+                        <div class="card">
+                            <p style="font-size: 1.125rem; line-height: 1.8; color: var(--text-muted);">
+                                Experienced clinical pharmacologist and R&D leader with over 15 years building and leading highly functional teams in model-informed drug development (MIDD). Proven track record in establishing clinical pharmacology and pharmacometrics capabilities in small biotechs, driving clinical strategy, and advancing innovative therapies across multiple therapeutic areas. Expert in leveraging quantitative approaches to enable critical development decisions while fostering a culture of scientific excellence and collaboration.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Husain Z. Attarwala, PhD. All rights reserved.</p>
-        </div>
-    </footer>
-    </div> <!-- End of mainContent -->
+        <!-- Competencies Section -->
+        <section class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Core Competencies</h2>
+                        <div class="competencies-grid">
+                            <div class="competency-card">
+                                <div class="competency-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="competency-title">Model-Informed Drug Development (MIDD)</div>
+                                <div class="competency-description">
+                                    Expert in implementing MIDD strategies for dose optimization and go/no-go decisions
+                                </div>
+                            </div>
+                            <div class="competency-card">
+                                <div class="competency-icon">
+                                    <i class="fas fa-microscope"></i>
+                                </div>
+                                <div class="competency-title">Clinical Pharmacology Leadership</div>
+                                <div class="competency-description">
+                                    Building and leading clinical pharmacology functions from inception in biotechs
+                                </div>
+                            </div>
+                            <div class="competency-card">
+                                <div class="competency-icon">
+                                    <i class="fas fa-pills"></i>
+                                </div>
+                                <div class="competency-title">Broad Therapeutic Expertise</div>
+                                <div class="competency-description">
+                                    Immunology, immuno-oncology, rare diseases, infectious diseases, cardiovascular, pulmonary, CNS diseases
+                                </div>
+                            </div>
+                            <div class="competency-card">
+                                <div class="competency-icon">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <div class="competency-title">Biotech R&D Company Building</div>
+                                <div class="competency-description">
+                                    Leadership in forming and scaling efficient R&D teams in small biotechs
+                                </div>
+                            </div>
+                            <div class="competency-card">
+                                <div class="competency-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="competency-title">Team Building & Leadership</div>
+                                <div class="competency-description">
+                                    Creating high-performing, collaborative teams aligned with strategic goals
+                                </div>
+                            </div>
+                            <div class="competency-card">
+                                <div class="competency-icon">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <div class="competency-title">Advanced Modeling Capabilities</div>
+                                <div class="competency-description">
+                                    PK/PD, PBPK, QSP, disease progression models using R, NONMEM, Python, Julia
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Password Protection Script -->
+        <!-- Experience Section -->
+        <section class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Experience</h2>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-header">
+                                    <div class="timeline-title">Vice President, DMPK, Clinical Pharmacology, Pharmacometrics and Analytical Sciences</div>
+                                    <div class="timeline-company">Aera Therapeutics</div>
+                                    <div class="timeline-period">September 2022 - Present | Cambridge, MA</div>
+                                </div>
+                                <div class="timeline-content">
+                                    <ul>
+                                        <li>Built and expanded scientific and operational capabilities across Clinical Pharmacology, Pharmacometrics and DMPK from ground up</li>
+                                        <li>Implemented comprehensive MIDD strategies for target selection and dose optimization across multiple therapeutic areas</li>
+                                        <li>Led cross-functional teams to enable critical go/no-go decisions using quantitative approaches</li>
+                                        <li>Utilized advanced modeling and simulation techniques to inform indication selection and predict efficacy/safety profiles</li>
+                                        <li>Shaped company's scientific vision and culture by fostering innovation and mentoring teams</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-header">
+                                    <div class="timeline-title">Head, Clinical Pharmacology and Pharmacometrics</div>
+                                    <div class="timeline-company">Moderna Therapeutics</div>
+                                    <div class="timeline-period">February 2019 - September 2022 | Cambridge, MA</div>
+                                </div>
+                                <div class="timeline-content">
+                                    <ul>
+                                        <li>Established and scaled the Clinical Pharmacology and Pharmacometrics function during critical growth phase</li>
+                                        <li>Led MIDD efforts across diverse therapeutic areas including oncology, immunology, rare and infectious diseases</li>
+                                        <li>Developed first-of-its-kind Immunostimulatory/immunodynamic (IS/ID) models for mRNA vaccines</li>
+                                        <li>Applied IS/ID models for COVID-19 mRNA vaccine, enabling dose selection across all age groups</li>
+                                        <li>Served as clinical pharmacology expert in regulatory interactions with FDA, EMA, and other global agencies</li>
+                                        <li>Established deep integration of pharmacometrics approaches across company governance model</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-header">
+                                    <div class="timeline-title">Principal Scientist</div>
+                                    <div class="timeline-company">Alnylam Pharmaceuticals</div>
+                                    <div class="timeline-period">March 2011 - January 2019 | Cambridge, MA</div>
+                                </div>
+                                <div class="timeline-content">
+                                    <ul>
+                                        <li>Progressed from Research Associate to Principal Scientist, demonstrating consistent technical leadership</li>
+                                        <li>Developed comprehensive PK/PD and disease models supporting multiple first-in-human programs</li>
+                                        <li>Contributed to regulatory approval and commercialization of 5 siRNA drugs (Onpattro, Vitrusiran, Inclisiran, Lumasiran, Givosiran)</li>
+                                        <li>Led bioanalytical and DMPK platform development for novel siRNA therapeutics</li>
+                                        <li>Authored key sections of multiple NDA/BLA submissions and regulatory briefing documents</li>
+                                        <li>Mentored teams and conducted workshops to build organizational capabilities</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Education</h2>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-header">
+                                    <div class="timeline-title">Ph.D. in Pharmaceutical Sciences</div>
+                                    <div class="timeline-company">Northeastern University</div>
+                                    <div class="timeline-period">Bouve School of Pharmacy, Boston, MA</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-header">
+                                    <div class="timeline-title">Master of Science in Pharmaceutical Sciences</div>
+                                    <div class="timeline-company">Northeastern University</div>
+                                    <div class="timeline-period">Bouve School of Pharmacy, Boston, MA</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-header">
+                                    <div class="timeline-title">Bachelor's in Pharmacy</div>
+                                    <div class="timeline-company">Al-Ameen College of Pharmacy</div>
+                                    <div class="timeline-period">Rajiv Gandhi University of Health Sciences, Bangalore, India</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Selected Publications</h2>
+                        
+                        <h3>Top Journal Articles</h3>
+                        
+                        <div class="publication-item">
+                            August, A., et al. (2021). <a href="https://www.nature.com/articles/s41591-021-01573-6" target="_blank">"A phase 1 trial of lipid-encapsulated mRNA encoding a monoclonal antibody with neutralizing activity against Chikungunya virus."</a> <em>Nature Medicine</em>, 27(12): 2224-2233. <span class="publication-impact">IF: 82.9</span>
+                        </div>
+                        
+                        <div class="publication-item">
+                            Kaushal, N., Attarwala, H., et al. (2024). <a href="https://ascpt.onlinelibrary.wiley.com/doi/10.1111/cts.13894" target="_blank">"Translational pharmacokinetic/pharmacodynamic model for mRNA-0184, an investigational therapeutic for the treatment of heart failure."</a> <em>Clinical and Translational Science</em>, 17(8): e13894.
+                        </div>
+                        
+                        <div class="publication-item">
+                            Ivaturi V, Attarwala, H., et al. (2024). <a href="https://ascpt.onlinelibrary.wiley.com/doi/10.1002/psp4.13073" target="_blank">"Immunostimulatory/immunodynamic model of mRNA-1273 to guide pediatric vaccine dose selection."</a> <em>CPT: Pharmacometrics & Systems Pharmacology</em>, 13(1): 68-83.
+                        </div>
+                        
+                        <div class="publication-item">
+                            Narayanan, E., et al. (2022). <a href="https://www.mdpi.com/2073-4468/11/4/67" target="_blank">"Rational design and in vivo characterization of mRNA-encoded broadly neutralizing antibody combinations against HIV-1."</a> <em>Antibodies</em>, 11(4): 67.
+                        </div>
+                        
+                        <div class="publication-item">
+                            Gandham, S.K., Attarwala, H.Z., & Amiji, M.M. (2022). <a href="https://pubs.acs.org/doi/10.1021/acs.molpharmaceut.2c00510" target="_blank">"Mathematical modeling and experimental validation of extracellular vesicle-mediated tumor suppressor microRNA delivery and propagation in ovarian cancer cells."</a> <em>Molecular Pharmaceutics</em>, 19(11): 4067-4079.
+                        </div>
+
+                        <h3>Key Presentations</h3>
+                        <div class="publication-item">
+                            Husain Attarwala (2023). "Unlocking the potential of model-informed-drug-development for RNA therapeutics and vaccines." PEGS, Boston. <span class="publication-impact">Invited Speaker</span>
+                        </div>
+                        
+                        <div class="publication-item">
+                            Husain Attarwala (2022). "Role of Scientific Computing in Dose Decisions for mRNA Therapeutics and Vaccines." <a href="https://juliacon.org/2022/" target="_blank">JuliaCon 2022</a>. <span class="publication-impact">Keynote Speaker</span>
+                        </div>
+                        
+                        <div class="publication-item">
+                            Husain Attarwala (2018). "Pharmacokinetics and Pharmacodynamics of GalNAc-siRNA Conjugates." 37th GRASP Annual Conference. <span class="publication-impact">Keynote Speaker</span>
+                        </div>
+
+                        <!-- Google Scholar Section -->
+                        <div class="scholar-section">
+                            <h3><i class="fas fa-graduation-cap"></i> Complete Publication List</h3>
+                            <p>All publications from Google Scholar (50+ papers, 1000+ citations)</p>
+                            <div class="publications-scroll">
+                                <div class="publication-scroll-item">
+                                    <span class="publication-year">2024</span> - Kaushal N, Attarwala H, et al. "Translational pharmacokinetic/pharmacodynamic model for mRNA-0184..." <em>Clinical and Translational Science</em>
+                                </div>
+                                <div class="publication-scroll-item">
+                                    <span class="publication-year">2024</span> - Liric Rajlic I, et al. "Translational kinetic-pharmacodynamics of mRNA-6231..." <em>CPT: Pharmacometrics & Systems Pharmacology</em>
+                                </div>
+                                <div class="publication-scroll-item">
+                                    <span class="publication-year">2024</span> - Ivaturi V, Attarwala H, et al. "Immunostimulatory/immunodynamic model of mRNA-1273..." <em>CPT: Pharmacometrics & Systems Pharmacology</em>
+                                </div>
+                                <div class="publication-scroll-item">
+                                    <span class="publication-year">2023</span> - Iqbal MJ, Hamdani T, Attarwala HZ, Amiji MM. "Nanoscale Vaccines for the Prevention of COVID-19" <em>Nanomedicines for the Prevention and Treatment of Infectious Diseases</em>
+                                </div>
+                                <div class="publication-scroll-item">
+                                    <span class="publication-year">2022</span> - Gandham SK, Attarwala HZ, Amiji MM. "Mathematical Modeling and Experimental Validation..." <em>Molecular Pharmaceutics</em>
+                                </div>
+                                <div class="publication-scroll-item">
+                                    <span class="publication-year">2022</span> - Narayanan E, et al. "Rational design and in vivo characterization of mRNA-encoded..." <em>Antibodies</em>
+                                </div>
+                                <div class="publication-scroll-item">
+                                    <span class="publication-year">2022</span> - Attarwala H, et al. "Translational Pharmacokinetic/Pharmacodynamic Model for mRNA-3927..." <em>Nucleic Acid Therapeutics</em>
+                                </div>
+                                <div class="publication-scroll-item">
+                                    <span class="publication-year">2021</span> - August A, et al. "A phase 1 trial of lipid-encapsulated mRNA encoding a monoclonal antibody..." <em>Nature Medicine</em>
+                                </div>
+                                <div class="publication-scroll-item">
+                                    <span class="publication-year">2021</span> - Habtemariam BA, et al. "Single-Dose Pharmacokinetics and Pharmacodynamics of Transthyretin..." <em>Clinical Pharmacology & Therapeutics</em>
+                                </div>
+                                <div class="publication-scroll-item">
+                                    <span class="publication-year">2021</span> - Attarwala HZ, Suri K, Amiji MM. "Co-Silencing of Tissue Transglutaminase-2 and Interleukin-15..." <em>Molecular Pharmaceutics</em>
+                                </div>
+                                <div class="publication-scroll-item">
+                                    <span class="publication-year">2020</span> - Zhang X, et al. "Patisiran pharmacokinetics, pharmacodynamics, and exposure-response analyses..." <em>The Journal of Clinical Pharmacology</em>
+                                </div>
+                                <div class="publication-scroll-item">
+                                    <span class="publication-year">2020</span> - Attarwala HZ, Suri K, Amiji MM. "Pharmacokinetics and Biodistribution Analysis..." <em>Bioelectricity</em>
+                                </div>
+                            </div>
+                            <a href="https://scholar.google.com/citations?user=DvGvTvMAAAAJ&hl=en" target="_blank" class="scholar-button">
+                                <i class="fas fa-external-link-alt"></i> View Full Google Scholar Profile
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Technical Skills</h2>
+                        <div class="skills-container">
+                            <span class="skill-tag">Model-Informed Drug Development (MIDD)</span>
+                            <span class="skill-tag">Clinical Pharmacology</span>
+                            <span class="skill-tag">Pharmacometrics</span>
+                            <span class="skill-tag">PK/PD Modeling</span>
+                            <span class="skill-tag">PBPK</span>
+                            <span class="skill-tag">QSP</span>
+                            <span class="skill-tag">Population PK</span>
+                            <span class="skill-tag">R</span>
+                            <span class="skill-tag">NONMEM</span>
+                            <span class="skill-tag">Monolix</span>
+                            <span class="skill-tag">Phoenix WinNonlin</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Julia</span>
+                            <span class="skill-tag">Clinical Trial Simulation</span>
+                            <span class="skill-tag">Regulatory Strategy</span>
+                            <span class="skill-tag">Team Building</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2024 Husain Z. Attarwala, PhD. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
     <script>
-        // Simple password protection (change 'yourpassword' to your desired password)
-        const correctPassword = 'Izyyv-Arwmr-ronz'; // CHANGE THIS TO YOUR DESIRED PASSWORD
+        // Password protection
+        const correctPassword = 'curious';
         
         // Check if user has already entered correct password in this session
         if (sessionStorage.getItem('cvAuthenticated') === 'true') {
@@ -937,12 +1041,10 @@
             const errorMessage = document.getElementById('errorMessage');
             
             if (inputPassword === correctPassword) {
-                // Correct password
                 sessionStorage.setItem('cvAuthenticated', 'true');
                 document.getElementById('passwordModal').style.display = 'none';
                 document.getElementById('mainContent').style.display = 'block';
             } else {
-                // Incorrect password
                 errorMessage.textContent = 'Incorrect password. Please try again.';
                 errorMessage.style.display = 'block';
                 document.getElementById('passwordInput').classList.add('shake');
@@ -954,14 +1056,41 @@
             }
         }
 
-        // Smooth scrolling behavior
+        // Smooth scrolling for internal links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
+        });
+
+        // Add scroll effect for cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe cards and timeline items
+        document.querySelectorAll('.card, .timeline-item, .competency-card, .publication-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
         });
     </script>
 </body>
